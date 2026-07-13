@@ -1,7 +1,5 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+
 
 # ========== 1. 文本、标题组件 ==========
 st.title("Streamlit 完整入门教程")  # 大标题
@@ -12,16 +10,7 @@ st.markdown("## Markdown语法：**加粗**、*斜体*、[链接](https://stream
 st.code("print('Python代码块展示')", language="python")
 st.divider()  # 分割线
 
-# ========== 2. 数据展示 ==========
-st.header("数据表格展示")
-df = pd.DataFrame({
-    "姓名": ["小明", "小红", "小刚"],
-    "分数": [88, 95, 76],
-    "班级": ["一班", "二班", "一班"]
-})
-st.dataframe(df)  # 可交互表格（排序、拖拽列）
-st.table(df)      # 静态表格
-st.metric(label="平均分", value=df["分数"].mean(), delta="+5.2")  # 指标卡片
+
 
 # ========== 3. 交互控件（核心：实现页面动态变化） ==========
 st.header("交互式输入控件")
@@ -60,18 +49,7 @@ if upload_file is not None:
     upload_df = pd.read_csv(upload_file)
     st.dataframe(upload_df)
 
-# ========== 5. 绘图支持 ==========
-st.header("图表绘制")
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
 
-# matplotlib图
-fig, ax = plt.subplots()
-ax.plot(x, y)
-st.pyplot(fig)
-
-# 内置简易折线图
-st.line_chart(pd.DataFrame({"sin": y, "cos": np.cos(x)}))
 
 # ========== 6. 布局优化（侧边栏、多列） ==========
 st.header("页面布局")
