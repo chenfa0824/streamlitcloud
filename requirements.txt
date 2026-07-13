@@ -1,7 +1,7 @@
 setuptools>=70
 wheel
 distutils-extra
-pip>=24.0
+pip>=26.1.2
 streamlit==1.58.0
 streamlit-desktop-app==0.3.4
 pandas==2.0.0
