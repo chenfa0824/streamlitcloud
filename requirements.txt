@@ -1,4 +1,6 @@
-setuptools>=68.0.0
+setuptools>=70
+wheel
+distutils-extra
 pip>=24.0
 streamlit==1.58.0
 streamlit-desktop-app==0.3.4
